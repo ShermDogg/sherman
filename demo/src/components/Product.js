@@ -13,11 +13,14 @@ const Product = ({product}) => {
 <a href={`/product/${product._id}`}>
     <Card.Title as='div'><strong>{product.name}</strong></Card.Title>
 </a>
-<Card.Text>
-       <div className='my-3'>
-            {product.rating} from {product.numReviews} reviews
+<Card.Text as='div'>
 
-        </div>
+    <Rating 
+    value={product.rating} 
+    text={`${product.numReviews} reviews`}
+     />
+       
+       
   </Card.Text> 
   <Card.Text as='h3'>
       ${product.price}
